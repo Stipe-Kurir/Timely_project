@@ -1,0 +1,19 @@
+
+
+
+<div *ngIf="prikaz_prozora" class="form-popup" id="myForm">
+  <form  class="form-container">
+
+    <label for="project_name"><b>PROJECT NAME</b></label>
+    <div></div>
+    <form #stringForm="ngForm" (ngSubmit)="SendInfo(stringForm.value)">
+    <input type="text" placeholder="Enter Project Name" name="project_name" ngModel ng-required="Unesite naziv projekta" >
+    <div></div>
+    <input type="submit" class="btn" value="STOP TIMER" >
+    </form>
+    
+    <button type="button" class="btn cancel" (click)="closeForm()">X</button>
+    
+  </form>
+</div>
+

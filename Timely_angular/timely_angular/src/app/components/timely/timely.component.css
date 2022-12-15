@@ -1,0 +1,13 @@
+
+
+.timely button{
+    font-size:18px;
+    position:absolute;
+    top: 15%;
+    left:46%;
+    transform:translate(-50,-50);
+    width:160px;
+    padding:20px;
+    border-radius:5px
+}
+

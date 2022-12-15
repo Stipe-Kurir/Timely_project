@@ -1,0 +1,17 @@
+<table class="podaci">
+    <tr>
+      <th *ngFor = "let column of headers">
+        {{column}}
+      </th>
+    </tr>
+
+  <!--ZAPIS U TABLICU-->
+  <tr *ngFor = "let arr of podaci">
+  <td>{{arr.project_name}}</td>
+  <td>{{arr.start_time}}</td>
+  <td>{{arr.stop_time}}</td>
+  <td>{{arr.duration}}</td>
+  </tr>
+
+
+  </table>

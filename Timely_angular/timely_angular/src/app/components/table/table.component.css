@@ -1,0 +1,44 @@
+
+  .podaci{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:60vh;
+    border-collapse: collapse;
+    height:30vh;
+    margin: auto;
+    position:absolute;
+    left:50%;
+    top:40%;
+    transform: translate(-50%,-50%);
+    display: block;
+    overflow:scroll;
+    
+
+  }
+
+  .podaci td {
+    border: 1px solid black;
+    border-bottom:1px solid rgb(218, 214, 214);
+    padding: 8px;
+    
+    
+  }
+ 
+  .podaci tr th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(217, 216, 216);
+    color:black;
+    border: 1px solid black;
+    width:60vh;
+   
+   
+   
+    
+  }
+
+  .podaci tr:nth-of-type(odd){
+background-color:rgb(231, 231, 231);
+
+  }
+

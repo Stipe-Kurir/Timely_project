@@ -1,0 +1,76 @@
+
+*/
+.form-popup {
+ width:400px;
+ border: 3px solid black;
+ position:absolute; 
+ background-color: azure;
+ transform:translate(-50%,-50%);
+  top:50%;
+  left:50;
+}
+
+
+
+
+.form-container {
+  width:400px;
+  height: 300px;
+ border: 3px solid black;
+ position:absolute; 
+ background-color: azure;
+ transform:translate(-50%,-50%);
+ top:30%;
+ left:50%;
+  
+}
+
+/* Full-width input fields */
+.form-container input[type=text] {
+  width: 92.5%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+
+  
+}
+
+.form-container input[type=submit] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+
+  
+}
+.form-container input[type=submit] .btn:hover {
+
+  background: #bafccc;
+  transition-duration: 0.4s
+
+  
+}
+
+.form-container .btn {
+  background-color:rgb(191, 185, 185);
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+
+}
+
+
+.form-container .cancel {
+  background-color:grey;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
