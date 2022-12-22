@@ -12,33 +12,29 @@ export class TableComponent implements OnInit {
 
   constructor(private shared:SharedService,
     public ZaBazuService:ZaBazuService){};
-    
-  
-  podatak=null;
-  podaci=null;
+
+  data_info=null;
   headers:Array<string>;
-
-signal_za_prikaz=null;
-
-
+  signal_data=null;
 
   ngOnInit(): void {
 
 
     this.shared.poslani_signal.subscribe(message=>{
       console.log("Primia SIGNAL: ",message);
-  this.signal_za_prikaz=message;
+  this.signal_data=message;
 
-      if(this.signal_za_prikaz==true)
-{
-      //RADI!!! UZIMA IZ BAZE I PRIKAZUJE U TABLICU!!
+      if(this.signal_data==true)
+      {
+      
       this.ZaBazuService.pozoviBazu
       ().subscribe(data=>{
-        this.podaci=data;
+        this.data_info=data;
       console.log("Prihvaćeni podaci iz baze: ",data);
-      console.log("UKUPNA TABLICA: ",this.podaci);
-      this.signal_za_prikaz=false;
+      console.log("UKUPNA TABLICA: ",this.data_info);
+      this.signal_data=false;
       })
+      
       }
       else{
       
@@ -48,12 +44,11 @@ signal_za_prikaz=null;
 
    })
 
-
    this.ZaBazuService.pozoviBazu
    ().subscribe(data=>{
-     this.podaci=data;
+     this.data_info=data;
    console.log("Prihvaćeni podaci iz baze: ",data);
-   console.log("UKUPNA TABLICA: ",this.podaci);
+   console.log("UKUPNA TABLICA: ",this.data_info);
    })
 
   this.headers = [ "Project", "Start", "Stop", "Duration"];

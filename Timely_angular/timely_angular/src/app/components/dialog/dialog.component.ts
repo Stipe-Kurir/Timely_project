@@ -1,7 +1,5 @@
 import { Component,OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared/shared.service';
-import { Subscription } from 'rxjs';
-
 
 @Component({
   selector: 'app-dialog',
@@ -10,15 +8,13 @@ import { Subscription } from 'rxjs';
 })
 export class DialogComponent implements OnInit {
 
-  prikaz_prozora:boolean=false;
-  //this:boolean=false;
-
-
-  constructor(private shared:SharedService){}
+  show_window:boolean=false;
   
-  project;
-  str:string;
-  null_str;
+ constructor(private shared:SharedService){}
+  
+
+  string_name:string;
+  null_string;
   info;
 
 
@@ -27,36 +23,27 @@ export class DialogComponent implements OnInit {
       console.log("Primia POP UP T ili F: ",message);
       this.info=message;
 
-    this.prikaz_prozora=true;
+    this.show_window=true;
 
    })
 
   }
 
-
-
-  closeForm(){  //AKO PRITISNEŠ CLOSED! U REDU
-    console.log("info koji vracas : ",!this.info);//INFO BI TREBA BITI FALSE!
+  closeForm(){  
+    console.log("info koji vracas : ",!this.info);
     this.shared.communicateVDialog(!this.info);
-    //this.shared.setMessage(false);//VRACAS FALSE JER NIJE GOTOVO!
-    this.prikaz_prozora=false;
+    this.show_window=false;
   }
     
 
-  //DODAJ KAD UPIŠE IME ONDA ŠALJE,nemoš slat prazno!
-  //USPIJA SI DA ŠALJE STRING
-  //NAPRAVI DA ONO ŠTO SE NAPIŠE U FORMI DA SE PRENESE 
-  //VAMO I ONDA TO POSLAT
-
 SendInfo(project_name:string){
-this.null_str=project_name;
-console.log("null_str",this.null_str.project_name);
+this.null_string=project_name;
 
-  if(this.null_str.project_name)
+  if(this.null_string.project_name)
   {
-    this.str=project_name;
-    console.log("UPISANI STRING: ",this.str);
-    this.shared.setMessage(this.str);
+    this.string_name=project_name;
+    console.log("UPISANI STRING: ",this.string_name);
+    this.shared.setMessage(this.string_name);
     this.info=true;
     console.log("POSLANI INFO ZA SUBMIT: ",this.info);
     this.shared.communicateVDialog(this.info);
@@ -67,11 +54,9 @@ console.log("null_str",this.null_str.project_name);
     return;
   }
 
-  this.prikaz_prozora=false;       //POČETNI PRIKAZ PROZORA!
+  this.show_window=false;       
 
 }
-
-
 
 }
 
